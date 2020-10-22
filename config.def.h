@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_selbord  },
 };
-
+#include <X11/XF86keysym.h>
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -71,7 +71,9 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox-bin", NULL };
 static const char *htopcmd[] = { "st", "-t", "Htop Process Viewer", "-e", "htop", NULL };
 static const char *ncmpcppcmd[] = { "st", "-t", "ncmpcpp music player", "-e", "ncmpcpp", NULL };
-
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -131,7 +133,12 @@ static Key keys[] = {
 	/* brightness settings */
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") },
+	/* Media settings */
+	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
+	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
 };
+
 
 
 /* button definitions */
