@@ -5,6 +5,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 20;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int gappx		= 5;		/* gaps size between windows */
 static const unsigned int gappih    = 8;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 8;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
@@ -14,7 +15,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Ubuntu Mono:style=regular:pixelsize=16" };
+static const char *fonts[]          = { "Ubuntu Mono:style=regular:pixelsize=16", "fontawesome:pixelsize=8" };
 static const char dmenufont[]       = "Ubuntu Mono:style=regular:pixelsize=16";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#444444";
@@ -133,7 +134,7 @@ static Key keys[] = {
 	/* brightness settings */
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") },
-	/* Media settings */
+	/* media settings */
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },

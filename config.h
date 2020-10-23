@@ -9,12 +9,13 @@ static const unsigned int gappih    = 6;       /* horiz inner gap between window
 static const unsigned int gappiv    = 6;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 6;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 6;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappx	    = 5;	/* gaps size between windows */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Ubuntu Mono:style=regular:pixelsize=16" };
+static const char *fonts[]          = { "Ubuntu Mono:style=regular:pixelsize=16", "fontawesome:size=12" };
 static const char dmenufont[]       = "Ubuntu Mono:style=regular:pixelsize=16";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#444444";
@@ -29,7 +30,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
